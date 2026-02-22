@@ -650,6 +650,10 @@ class Redis
       string_command(["LSET", namespaced(key), index.to_s, value.to_s])
     end
 
+    def lpos(key, element)
+      string_command(["LPOS", namespaced(key), element])
+    end
+
     # Removes and returns the first element of the list stored at key.
     #
     # **Return value**: String, the value of the first element, or nil when key does not exist.
