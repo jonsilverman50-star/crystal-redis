@@ -651,7 +651,7 @@ class Redis
     end
 
     def lpos(key, element)
-      string_command(["LPOS", namespaced(key), element])
+      integer_or_nil_command(["LPOS", namespaced(key), element])
     end
 
     # Removes and returns the first element of the list stored at key.
